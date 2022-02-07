@@ -33,6 +33,8 @@ services:
     ports:
       - "8000:3000"
     stdin_open: true
+    environment:
+      - WDS_SOCKET_PORT=0
 volumes:
   postgres-data:
     driver: local
