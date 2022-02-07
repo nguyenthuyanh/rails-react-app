@@ -13,7 +13,7 @@ RUN npm install --silent
 RUN npm install react-scripts@3.4.1 -g --silent
 
 # add app
-COPY ./rails-react-app/ ./
+COPY . ./
 
 # start app
 CMD ["npm", "start"]
