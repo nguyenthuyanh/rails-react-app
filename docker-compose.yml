@@ -17,7 +17,7 @@ services:
       - ./api:/rails-react-app
       - ./api/vendor/bundle:/rails-react-app/vendor/bundle
     environment:
-      TZ: Asia/Tokyo
+      TZ: Europe/Paris
       RAILS_ENV: development
     ports:
       - 3001:3000
@@ -29,9 +29,10 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./front:/usr/src/app
-    command: sh -c "cd rails-react-app && yarn start"
+    command: sh -c "cd rails-react-app && yarn && yarn start"
     ports:
       - "8000:3000"
+    stdin_open: true
 volumes:
   postgres-data:
     driver: local
