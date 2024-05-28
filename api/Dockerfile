@@ -1,9 +1,8 @@
-FROM ruby:2.5
+FROM ruby:3.3
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 RUN mkdir /rails-react-app
 WORKDIR /rails-react-app
-COPY Gemfile /rails-react-app/Gemfile
-COPY Gemfile.lock /rails-react-app/Gemfile.lock
+COPY Gemfile Gemfile.lock* /rails-react-app/
 RUN bundle install
 COPY . /rails-react-app
 
